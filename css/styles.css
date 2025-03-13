@@ -1,0 +1,399 @@
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'MiFuente';
+    src: url('../fonts/MuseoSans_500-webfont.woff2') format('woff2');
+}
+
+*{
+    background-color: #2f3136;
+    color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'MiFuente' ,Arial, sans-serif;
+    font-size: 1.1em;
+}
+
+p, h1{
+    /*font-family: Arial, Helvetica, sans-serif;/*Fuente temporal*/
+}
+
+.sticky-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-container {
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    justify-content: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+    color: white;
+    background-color: #202225;
+    top: 0;
+    position: sticky;
+    z-index: 1000;
+}
+
+.menu-row{
+    background-color: #202225;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 59px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-cell,
+.menu-dropdown {
+    position: relative; /* Asegura que el contenedor se ajuste solo a su contenido */
+    text-align: center;
+    padding: 0; /* Elimina cualquier padding extra en el contenedor */
+}
+
+.menu-cell a,
+.menu-dropdown-button {
+    background-color: #202225;
+    text-decoration: none;
+    color: white;
+    padding: 21px 20px;
+    transition: background-color 0.3s ease,color 0.3s ease;
+    font-weight: bold;
+    position: relative;
+    bottom: 1px;
+}
+
+.menu-dropdown-button:nth-child(1){
+    position: relative;
+    bottom: 1px;
+}
+
+.menu-cell .menu-active a img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.menu-cell a:hover,
+.menu-dropdown:hover .menu-dropdown-button,
+.menu-dropdown:hover img{
+    background-color: #444;
+    transition: background-color 0.3s ease,color 0.3s ease;
+    color: white; /* Color blanco para hover */
+}
+
+/*Toca revisarlo*/
+.menu-active a {
+    display: flex; /* Mantiene la alineación de contenido */
+    align-items: center; /* Centra la imagen verticalmente */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    width: auto; /* O ajusta según tus necesidades */
+    height: 100%; /* Mantiene la altura del enlace consistente */
+    padding: 0; /* Sin relleno extra */
+    text-decoration: none; /* Sin subrayado */
+    overflow: hidden; /* Evita que la imagen sobresalga del contenedor */
+}
+
+.menu-active a img {
+    width: auto; /* Permite ajustar el tamaño manualmente */
+    height: 59px; /* Ajusta este valor al tamaño deseado sin afectar la barra */
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+    display: block; /* Evita espacios adicionales */
+}
+
+.menu-active a img:hover {
+    /*background-color: #41a4de; color original*/
+    filter: brightness(0.8);
+}
+
+.menu-dropdown {
+    position: relative;
+}
+
+.menu-dropdown img {
+    background-color: #202225;
+    height: 16px;
+    width: auto;
+}
+
+.menu-dropdown-content {
+    display: none;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #2f3136;
+    top:100%;
+    left: 0;
+    transform: translateY(19px);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.menu-dropdown-content a {
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    text-align: left;
+    background-color: #2f3136; /* Fondo por defecto */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-dropdown-content a:hover {
+    background-color: #444;
+    color: white;
+}
+
+.menu-dropdown:hover .menu-dropdown-content {
+    display: block;
+}
+
+.nav-bar img{
+    width: 16px;
+    height: 16px;
+    
+}
+
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.language img{/*para acordarme de la bandera*/
+    width: 48px;
+    height: auto;
+}
+
+.language{
+    margin-left: auto;
+}
+
+.main-head img{
+    width: auto;
+    height: 50px;
+}
+
+.main-head a{
+    color:#2f3136;
+}
+
+.head-icons img{
+    margin: 5px;
+    margin-left: 40px;
+    background-color: transparent;
+}
+
+.head-icons img:hover{
+    transform: scale(1.1);
+}
+
+.head-icons0 img {
+    position: absolute;
+    top: 16%;
+    right: 20%;
+    z-index: 100;
+    width: 1100px;
+    height: auto;
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.9));
+}
+
+.head-icons0 img:hover{
+    transform: scale(1);
+}
+
+.head-icons1 img {
+    position: absolute;
+    top: 12%;
+    z-index: 100;
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.9));
+}
+
+.head-icons2 img {
+    position: absolute;
+    top: 22%;
+    z-index: 100;
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.9));
+}
+
+.head-icons3 img {
+    position: absolute;
+    top: 32%;
+    z-index: 100;
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.9));
+}
+
+.main-photo img{
+    display: block;
+    width: 100%;
+    height: 320px;
+    position: relative;
+    object-fit: cover;
+}
+
+.description-title{
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.description-photo{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.description-photo img {
+    width: 300px;
+    height: 340px;
+    border-radius: 10px;
+    overflow: hidden;
+    
+}
+
+.description {
+    max-width: 40%;
+    text-align: justify;
+    margin-left: 10px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.description p{
+    padding: 5px;
+}
+
+.extra-text {
+    padding: 30px;
+    text-align: justify;
+    font-size: 1.1em;
+}
+
+.container {
+    max-width: 80%; /* Ajusta el ancho máximo aquí */
+    margin: 0 auto; /* Alinea la imagen y el texto en la parte superior */
+    gap: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.proyects h1{
+    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-left: 30px;
+}
+
+.extra-text a{
+    color: #41a4de;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.extra-text a:hover{
+    color: #3483b2;
+}
+
+.proyects img{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    margin: 10px;
+    width: 350px;
+    height: 270px;
+    object-fit: cover;
+}
+
+.proyects img:hover{
+    transform: scale(1.05);
+    filter: brightness(0.7);
+}
+
+.proyects1{
+    display: flex;
+    justify-content: center;
+}
+
+.proyects2{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+/*Flecha para arriba*/
+.scrollup {
+    position: fixed;
+    bottom: 20px; /* Distancia desde el borde inferior */
+    right: 20px; /* Distancia desde el borde derecho */
+    background-color: #202225; 
+    color: white; 
+    border: none; 
+    border-radius: 50%; /* Forma circular */
+    width: 50px; 
+    height: 50px; 
+    font-size: 24px; 
+    cursor: pointer; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra */
+    display: none;
+    justify-content: center; 
+    align-items: center; 
+    text-decoration: none;
+    transition: bottom .4s, transform .4s;
+}
+
+.show-scroll{
+    display: inline-flex;
+}
+
+.scrollup:hover {
+    background-color: #444; /* Fondo más claro al pasar el cursor */
+    transform: translateY(-.5rem);
+
+}
+
+.scrollup i {
+    font-size: 24px; 
+    line-height: 1; /* Evita que el ícono tenga espacio extra */
+    background-color: transparent;
+}
+
+
+footer img{
+    width: auto;
+    height: 50px;
+    margin: 5px;
+    margin-left: 24px;
+    background-color: #202225;
+}
+
+footer img:hover{
+    transform: scale(1.1);
+}
+
+footer{
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+    padding: 1rem;
+    background-color: #202225;
+}
+
+footer a{
+    color: white;
+    background-color: #202225;
+}

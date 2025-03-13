@@ -1,0 +1,316 @@
+html{
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'MiFuente';
+    src: url('../fonts/MuseoSans_500-webfont.woff2') format('woff2');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p, h1{
+    /*font-family: Arial, Helvetica, sans-serif;/*Fuente temporal*/
+    color: #ffffff;
+    /*font-weight: bold;*/
+}
+
+body {
+    display: block;
+   /* justify-content: center;*/
+    /*align-items: center;*/
+    height: 100vh;
+    background-color: #2f3136;
+    font-family: 'MiFuente' ,Arial, sans-serif;
+    font-size: 1.1em;
+}
+
+.sticky-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-container {
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    justify-content: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+    color: white;
+    background-color: #202225;
+    top: 0;
+    position: sticky;
+    z-index: 1000;
+}
+
+.menu-row{
+    background-color: #202225;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-cell,
+.menu-dropdown {
+    position: relative; /* Asegura que el contenedor se ajuste solo a su contenido */
+    text-align: center;
+    padding: 0; /* Elimina cualquier padding extra en el contenedor */
+}
+
+.menu-cell a,
+.menu-dropdown-button {
+    background-color: #202225;
+    text-decoration: none;
+    color: white;
+    padding: 21px 20px;
+    transition: background-color 0.3s ease,color 0.3s ease;
+    font-weight: bold;
+    position: relative;
+    bottom: 1px;
+}
+
+.menu-dropdown-button:nth-child(1){
+    position: relative;
+    bottom: 1px;
+}
+
+.menu-cell .menu-active a img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.menu-cell a:hover,
+.menu-dropdown:hover .menu-dropdown-button,
+.menu-dropdown:hover img{
+    background-color: #444;
+    transition: background-color 0.3s ease,color 0.3s ease;
+    color: white; /* Color blanco para hover */
+}
+
+/*Toca revisarlo*/
+.menu-active a {
+    display: flex; /* Mantiene la alineación de contenido */
+    align-items: center; /* Centra la imagen verticalmente */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    width: auto; /* O ajusta según tus necesidades */
+    height: 100%; /* Mantiene la altura del enlace consistente */
+    padding: 0; /* Sin relleno extra */
+    text-decoration: none; /* Sin subrayado */
+    overflow: hidden; /* Evita que la imagen sobresalga del contenedor */
+}
+
+.menu-active a img {
+    width: auto; /* Permite ajustar el tamaño manualmente */
+    height: 60px; /* Ajusta este valor al tamaño deseado sin afectar la barra */
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+    display: block; /* Evita espacios adicionales */
+}
+
+.menu-active a img:hover {
+    /*background-color: #41a4de; color original*/
+    filter: brightness(0.8);
+}
+
+.menu-dropdown {
+    position: relative;
+}
+
+.menu-dropdown img {
+    background-color: #202225;
+    height: 16px;
+    width: auto;
+}
+
+.menu-dropdown-content {
+    display: none;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #2f3136;
+    top:100%;
+    left: 0;
+    transform: translateY(19px);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.menu-dropdown-content a {
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    text-align: left;
+    background-color: #2f3136; /* Fondo por defecto */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-dropdown-content a:hover {
+    background-color: #444;
+    color: white;
+}
+
+.menu-dropdown:hover .menu-dropdown-content {
+    display: block;
+}
+
+.nav-bar img{
+    width: 16px;
+    height: 16px;
+    
+}
+
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.language img{/*para acordarme de la bandera*/
+    width: 48px;
+    height: auto;
+}
+
+.language{
+    margin-left: auto;
+}
+
+main{
+    margin: 20px auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-text h1{
+    margin: 30px 0 20px;
+
+}
+
+.main-text{
+    /*display: inline-block;*/
+    text-align: justify;
+    width: 100%;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.main-text p:nth-of-type(1){
+    margin-bottom: 20px;
+}
+
+.proyects{
+    display: flex;
+    flex-wrap: wrap;
+    /*gap: 20px;*/
+    justify-content: center;
+    width: 100%;
+}
+
+.img-container{
+    width: 960px;
+    height: 300px;
+}
+
+.proyects img{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    margin: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.proyects img:hover{
+    transform: scale(1.05);
+    filter: brightness(0.7);
+}
+
+.proyects1{
+    margin-top: 30px;
+    display: block;
+    justify-content: center;
+}
+
+.proyects2{/*En esta web no existe*/
+    display: block;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+/*Flecha para arriba*/
+.scrollup {
+    position: fixed;
+    bottom: 20px; /* Distancia desde el borde inferior */
+    right: 20px; /* Distancia desde el borde derecho */
+    background-color: #202225; 
+    color: white; 
+    border: none; 
+    border-radius: 50%; /* Forma circular */
+    width: 50px; 
+    height: 50px; 
+    font-size: 24px; 
+    cursor: pointer; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra */
+    display: none;
+    justify-content: center; 
+    align-items: center; 
+    text-decoration: none;
+    transition: bottom .4s, transform .4s;
+}
+
+.show-scroll{
+    display: inline-flex;
+}
+
+.scrollup:hover {
+    background-color: #444; /* Fondo más claro al pasar el cursor */
+    transform: translateY(-.5rem);
+
+}
+
+.scrollup i {
+    font-size: 24px; 
+    line-height: 1; /* Evita que el ícono tenga espacio extra */
+    background-color: transparent;
+}
+
+footer img{
+    width: auto;
+    height: 50px;
+    margin: 5px;
+    margin-left: 24px;
+    background-color: #202225;
+}
+
+footer img:hover {
+    transform: scale(1.1);
+}
+
+footer{
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+    padding: 1rem;
+    background-color: #202225;
+}
+
+footer a{
+    color: white;
+    background-color: #202225;
+}
